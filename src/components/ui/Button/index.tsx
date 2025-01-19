@@ -1,7 +1,10 @@
 "use client";
-import type { ButtonProps as ButtonAriaProps } from "react-aria-components";
+import type {
+  ButtonProps as ButtonAriaProps,
+  LinkProps as LinkAriaProps,
+} from "react-aria-components";
 import type { VariantProps } from "class-variance-authority";
-import { Button as ButtonAria, composeRenderProps } from "react-aria-components";
+import { Button as ButtonAria, Link as LinkAria, composeRenderProps } from "react-aria-components";
 import { cva } from "class-variance-authority";
 import cn from "@/utils/cn";
 
@@ -45,5 +48,23 @@ function Button({ variant, className, ...props }: ButtonProps) {
   );
 }
 
-export { Button, buttonVariants };
-export type { ButtonProps };
+type ButtonLinkProps = LinkAriaProps & VariantProps<typeof buttonVariants>;
+
+function ButtonLink({ variant, className, ...props }: ButtonLinkProps) {
+  return (
+    <LinkAria
+      className={composeRenderProps(className, (className) =>
+        cn(
+          buttonVariants({
+            variant,
+            className,
+          })
+        )
+      )}
+      {...props}
+    />
+  );
+}
+
+export { Button, ButtonLink, buttonVariants };
+export type { ButtonProps, ButtonLinkProps };
