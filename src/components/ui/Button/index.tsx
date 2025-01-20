@@ -10,7 +10,7 @@ import cn from "@/utils/cn";
 
 const buttonVariants = cva(
   [
-    "inline-block text-primary border-2 border-primary w-fit py-0.5 px-2.5 text-base uppercase transition-transform duration-700",
+    "inline-flex items-center gap-2 text-primary border-2 border-primary w-fit py-0.5 px-2.5 text-base uppercase transition-transform duration-700",
     "focus:scale-95 focus:outline-none focus:transition-transform focus:duration-700",
     "hover:scale-95 hover:transition-transform hover:duration-700",
     "pressed:scale-90 pressed:duration-200",
