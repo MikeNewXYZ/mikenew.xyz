@@ -40,3 +40,4 @@ function WelcomeHero({ topText, title, subtitle, linkButton }: WelcomeHeroProps)
 }
 
 export { WelcomeHero };
+export type { WelcomeHeroProps };
