@@ -19,6 +19,11 @@ export default {
       primary: "#E7E0CD",
       secondary: "#000000",
     },
+    extend: {
+      screens: {
+        "h-600": { raw: "(max-height: 600px)" },
+      },
+    },
   },
   plugins: [tailwindCSSAnimated, tailwindCSSReactAriaComponents],
 } satisfies Config;
