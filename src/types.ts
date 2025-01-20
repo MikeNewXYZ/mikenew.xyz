@@ -1,7 +1,7 @@
-type LinkObjectSchema = {
+type NavigationLink = {
   label: string;
   href: string;
   target: "_self" | "_blank";
 };
 
-export type { LinkObjectSchema };
+export type { NavigationLink };

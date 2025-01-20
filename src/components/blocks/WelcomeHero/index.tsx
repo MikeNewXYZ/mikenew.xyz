@@ -1,4 +1,4 @@
-import type { LinkObjectSchema } from "@/components/blocks/types";
+import type { NavigationLink } from "@/types";
 import { DottedBackground } from "@/components/DottedBackground";
 import { ButtonLink } from "@/components/ui/Button";
 import { ViewProjectsButton } from "./ViewProjectsButton";
@@ -8,7 +8,7 @@ type WelcomeHeroProps = {
   topText: string;
   title: string;
   subtitle: string;
-  linkButton: LinkObjectSchema;
+  linkButton: NavigationLink;
 };
 
 function WelcomeHero({ topText, title, subtitle, linkButton }: WelcomeHeroProps) {
