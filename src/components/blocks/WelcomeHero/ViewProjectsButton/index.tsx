@@ -15,7 +15,7 @@ function ViewProjectsButton() {
   return (
     <div
       className={cn(
-        "absolute container bottom-5 flex animate-pulse flex-col items-center justify-center text-center",
+        "absolute container bottom-5 left-1/2 -translate-x-1/2 flex animate-pulse flex-col items-center justify-center text-center",
         "h-600:landscape:text-right h-600:landscape:items-end"
       )}
     >
