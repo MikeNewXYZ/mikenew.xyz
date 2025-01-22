@@ -1,5 +1,5 @@
 "use client";
-import { WelcomeHero } from "@/components/blocks/WelcomeHero";
+import { WelcomeHero } from "@/blocks/WelcomeHero";
 
 export default function HomePage() {
   return (
