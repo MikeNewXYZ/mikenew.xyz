@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-secondary text-primary antialiased flex flex-col w-full min-h-dvh overflow-x-hidden;
+    @apply bg-secondary text-primary antialiased flex flex-col w-full h-1 min-h-dvh overflow-x-hidden;
   }
 }
