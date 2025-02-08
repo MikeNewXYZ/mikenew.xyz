@@ -24,7 +24,7 @@ function Header({ menuLinks }: HeaderProps) {
   return (
     <header className="w-full absolute inset-0 z-10" style={{ height: HEADER_HEIGHT }}>
       <nav className="flex items-center container h-full">
-        <ButtonLink className="font-bold" variant="ghost" href="/">
+        <ButtonLink className="font-bold p-0" variant="ghost" href="/">
           MikeNew.XYZ
         </ButtonLink>
 
