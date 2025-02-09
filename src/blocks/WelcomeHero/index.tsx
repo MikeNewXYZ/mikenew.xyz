@@ -1,18 +1,11 @@
-import type { NavigationLink } from "@/types";
+import type { PagesBlocksWelcomeHero } from "@tina/__generated__/types";
 import { DottedBackground } from "@/components/DottedBackground";
 import { ButtonLink } from "@/components/ui/Button";
 import { HiddenHeader } from "@/partials/Header";
 import { ViewProjectsButton } from "./ViewProjectsButton";
 import cn from "@/utils/cn";
 
-type WelcomeHeroProps = {
-  topText: string;
-  title: string;
-  subtitle: string;
-  linkButton: NavigationLink;
-};
-
-function WelcomeHero({ topText, title, subtitle, linkButton }: WelcomeHeroProps) {
+function WelcomeHero({ topText, title, subtitle, link }: PagesBlocksWelcomeHero) {
   return (
     <section className="w-full h-dvh overflow-hidden relative">
       <div
@@ -23,24 +16,26 @@ function WelcomeHero({ topText, title, subtitle, linkButton }: WelcomeHeroProps)
       >
         <HiddenHeader className="hidden h-600:landscape:block" />
 
-        <h2 className="text-3xl font-black uppercase sm:text-5xl">{topText}</h2>
-        <h1 className="text-6xl font-black uppercase sm:text-9xl">{title}</h1>
-        <p className="mt-1 max-w-96 text-balance text-base normal-case sm:text-xl">{subtitle}</p>
-        <ButtonLink
-          className="mt-4 md:mt-6 text-sm md:text-base"
-          href={linkButton.href}
-          target={linkButton.target}
-        >
-          {linkButton.label}
-        </ButtonLink>
+        {topText && <h2 className="text-3xl font-black uppercase sm:text-5xl">{topText}</h2>}
+        {title && <h1 className="text-6xl font-black uppercase sm:text-9xl">{title}</h1>}
+        {subtitle && <p className="mt-1 max-w-96 text-balance text-base normal-case sm:text-xl">{subtitle}</p>}
+
+        {link && (
+          <ButtonLink
+            className="mt-4 md:mt-6 text-sm md:text-base"
+            href={link.url}
+            isExternal={link.isExternal as boolean}
+          >
+            {link.label}
+          </ButtonLink>
+        )}
+
       </div>
 
       <ViewProjectsButton />
-
       <DottedBackground />
     </section>
   );
 }
 
 export { WelcomeHero };
-export type { WelcomeHeroProps };

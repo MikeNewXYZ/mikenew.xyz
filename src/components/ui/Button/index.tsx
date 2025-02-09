@@ -49,9 +49,11 @@ function Button({ variant, className, ...props }: ButtonProps) {
   );
 }
 
-type ButtonLinkProps = LinkAriaProps & VariantProps<typeof buttonVariants>;
+type ButtonLinkProps = LinkAriaProps & VariantProps<typeof buttonVariants> & {
+  isExternal?: boolean;
+};
 
-function ButtonLink({ variant, className, ...props }: ButtonLinkProps) {
+function ButtonLink({ variant, className, isExternal, ...props }: ButtonLinkProps) {
   return (
     <LinkAria
       className={composeRenderProps(className, (className) =>
@@ -62,6 +64,7 @@ function ButtonLink({ variant, className, ...props }: ButtonLinkProps) {
           })
         )
       )}
+      target={isExternal ? "_blank" : "_self"}
       {...props}
     />
   );

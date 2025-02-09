@@ -14,7 +14,8 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
           { label: "Contact", href: "/contact", target: "_self" },
         ]}
       />
-      <main className="flex flex-col w-full overflow-x-hidden">{children}</main>
+      <main className="flex-1 flex flex-col w-full overflow-x-hidden">{children}</main>
+      <footer>test footer</footer>
     </>
   );
 }
