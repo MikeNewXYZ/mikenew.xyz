@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 	const pageSlugs = pagesResponse.data.pageConnection.edges.map((page) => {
 		if (!page?.node) {
-			throw new Error("Page in Pages Collection is empty");
+			throw new Error("Page in Page Collection is empty");
 		}
 
 		const fileName = page.node._sys.filename;
