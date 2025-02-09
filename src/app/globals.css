@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-secondary text-primary antialiased flex flex-col w-full h-1 min-h-dvh overflow-x-hidden;
-  }
+	body {
+		@apply flex h-1 min-h-dvh w-full flex-col overflow-x-hidden bg-secondary text-primary antialiased;
+	}
 }

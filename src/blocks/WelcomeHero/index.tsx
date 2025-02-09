@@ -6,36 +6,37 @@ import { ViewProjectsButton } from "./ViewProjectsButton";
 import cn from "@/utils/cn";
 
 function WelcomeHero({ topText, title, subtitle, link }: PagesBlocksWelcomeHero) {
-  return (
-    <section className="w-full h-dvh overflow-hidden relative">
-      <div
-        className={cn(
-          "container relative mx-auto flex flex-col text-center h-full items-center justify-center landscape:pb-2 lg:landscape:pb-16",
-          "h-600:landscape:text-left h-600:landscape:items-start h-600:landscape:pb-0 h-600:landscape:justify-start"
-        )}
-      >
-        <HiddenHeader className="hidden h-600:landscape:block" />
+	return (
+		<section className="relative h-dvh w-full overflow-hidden">
+			<div
+				className={cn(
+					"container relative mx-auto flex h-full flex-col items-center justify-center text-center landscape:pb-2 lg:landscape:pb-16",
+					"h-600:landscape:items-start h-600:landscape:justify-start h-600:landscape:pb-0 h-600:landscape:text-left",
+				)}
+			>
+				<HiddenHeader className="hidden h-600:landscape:block" />
 
-        {topText && <h2 className="text-3xl font-black uppercase sm:text-5xl">{topText}</h2>}
-        {title && <h1 className="text-6xl font-black uppercase sm:text-9xl">{title}</h1>}
-        {subtitle && <p className="mt-1 max-w-96 text-balance text-base normal-case sm:text-xl">{subtitle}</p>}
+				{topText && <h2 className="text-3xl font-black uppercase sm:text-5xl">{topText}</h2>}
+				{title && <h1 className="text-6xl font-black uppercase sm:text-9xl">{title}</h1>}
+				{subtitle && (
+					<p className="mt-1 max-w-96 text-balance text-base normal-case sm:text-xl">{subtitle}</p>
+				)}
 
-        {link && (
-          <ButtonLink
-            className="mt-4 md:mt-6 text-sm md:text-base"
-            href={link.url}
-            isExternal={link.isExternal as boolean}
-          >
-            {link.label}
-          </ButtonLink>
-        )}
+				{link && (
+					<ButtonLink
+						className="mt-4 text-sm md:mt-6 md:text-base"
+						href={link.url}
+						isExternal={link.isExternal as boolean}
+					>
+						{link.label}
+					</ButtonLink>
+				)}
+			</div>
 
-      </div>
-
-      <ViewProjectsButton />
-      <DottedBackground />
-    </section>
-  );
+			<ViewProjectsButton />
+			<DottedBackground />
+		</section>
+	);
 }
 
 export { WelcomeHero };
