@@ -30,11 +30,11 @@ type PageProps = {
 
 async function Page({ params }: PageProps) {
 	const { slug } = await params;
-	const pagesResults = await client.queries.page({
+	const pageResults = await client.queries.page({
 		relativePath: slug ? "home.json" : `${slug[0]}.json`,
 	});
 
-	return <PageBlocks {...pagesResults} />;
+	return <PageBlocks {...pageResults} />;
 }
 
 export default Page;
