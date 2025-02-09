@@ -1,4 +1,5 @@
 import type { Template } from "tinacms";
+import { linkField } from "@/fields/link";
 
 const welcomeHeroBlock: Template = {
 	name: "welcomeHero",
@@ -31,33 +32,7 @@ const welcomeHeroBlock: Template = {
 			label: "Subtitle",
 			type: "string",
 		},
-		{
-			name: "link",
-			label: "Link Button",
-			type: "object",
-			fields: [
-				{
-					name: "label",
-					label: "Label",
-					type: "string",
-					required: true,
-				},
-				{
-					name: "url",
-					label: "Url",
-					type: "string",
-					required: true,
-				},
-				{
-					name: "isExternal",
-					label: "Open New Tab",
-					type: "boolean",
-					ui: {
-						component: "toggle",
-					},
-				},
-			],
-		},
+		linkField({ name: "link", label: "Link Button" }),
 	],
 };
 
