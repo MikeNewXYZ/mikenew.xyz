@@ -2,7 +2,7 @@ import type { Collection } from "tinacms";
 import { welcomeHeroBlock } from "@/blocks/WelcomeHero/config";
 
 const PagesCollection: Collection = {
-	name: "page",
+	name: "pages",
 	label: "Pages",
 	path: "content/pages",
 	format: "json",

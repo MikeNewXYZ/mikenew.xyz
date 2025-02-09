@@ -1,10 +1,10 @@
 "use client";
-import type { PageQuery } from "@tina/__generated__/types";
+import type { PagesQuery } from "@tina/__generated__/types";
 import { useTina } from "tinacms/dist/react";
 import { WelcomeHero } from "@/blocks/WelcomeHero";
 
 type PageBlocksProps = {
-	data: PageQuery;
+	data: PagesQuery;
 	variables: {
 		relativePath: string;
 	};
@@ -16,9 +16,9 @@ function PageBlocks(props: PageBlocksProps) {
 
 	return (
 		<>
-			{data.page.blocks?.map((block, index) => {
+			{data.pages.blocks?.map((block, index) => {
 				switch (block?.__typename) {
-					case "PageBlocksWelcomeHero": {
+					case "PagesBlocksWelcomeHero": {
 						return <WelcomeHero key={block?.__typename + index} {...block} />;
 					}
 				}

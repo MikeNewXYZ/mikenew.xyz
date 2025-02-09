@@ -1,11 +1,11 @@
-import type { PageBlocksWelcomeHero } from "@tina/__generated__/types";
+import type { PagesBlocksWelcomeHero } from "@tina/__generated__/types";
 import { DottedBackground } from "@/components/DottedBackground";
 import { ButtonLink } from "@/components/ui/Button";
 import { HiddenHeader } from "@/partials/Header";
 import { ViewProjectsButton } from "./ViewProjectsButton";
 import cn from "@/utils/cn";
 
-function WelcomeHero({ topText, title, subtitle, link }: PageBlocksWelcomeHero) {
+function WelcomeHero({ topText, title, subtitle, link }: PagesBlocksWelcomeHero) {
 	return (
 		<section className="relative h-dvh w-full overflow-hidden">
 			<div
